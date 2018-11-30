@@ -7,12 +7,6 @@ Rails.application.routes.draw do
   root "histories#index"
   resources :sessions, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resource :users do
-    member do
-      get 'preview'
-    end
-  end
-
   get 'users/histories', to: 'histories#history', as: 'user_histories'
 
 end
